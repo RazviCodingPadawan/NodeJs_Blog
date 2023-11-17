@@ -240,4 +240,17 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
+/**
+ * DELETE /
+ * Admin - Delete Post
+ */
+router.put("/delete-post/:id", authMiddleware, async (req, res) => {
+  try {
+    await Post.deleteOne({ _id: req.params.id });
+    res.redirect("/dashboard");
+  } catch (error) {
+    console.log(error);
+  } 
+});
+
 module.exports = router;
