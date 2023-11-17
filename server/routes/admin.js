@@ -9,7 +9,6 @@ const adminLayout = "../views/layouts/admin";
 const jwtSecret = process.env.JWT_SECRET;
 
 /**
- *
  * Check Login
  */
 const authMiddleware = (req, res, next) => {
@@ -178,21 +177,6 @@ router.put("/edit-post/:id", authMiddleware, async (req, res) => {
     console.log(error);
   }
 });
-
-// router.post('/admin', async (req, res) => {
-//   try {
-//     const { username, password } = req.body;
-
-//     if(req.body.username === 'admin' && req.body.password === 'password') {
-//       res.send('You are logged in.')
-//     } else {
-//       res.send('Wrong username or password');
-//     }
-
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
 
 /**
  * POST /
